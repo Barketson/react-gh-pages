@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Search from "./routers/search.js";
+import Favorite from "./routers/favorite.js";
+import CityCard from "./routers/cityCard.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="app">
+          <header>
+            <nav>
+              <div className="nav">
+                <Link to="/">Search</Link>
+                <Link to="/favorite">Favorite</Link>
+              </div>
+            </nav>
+          </header>
+          <Switch>
+            <Route exact path="/" component={Search} />
+            <Route path="/favorite" component={Favorite} />
+            <Route path="/citycard/:id" component={CityCard} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
