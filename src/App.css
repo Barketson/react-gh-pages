@@ -1,158 +1,378 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  width: 100%;
+#App {
+  /* Give app full page to work with */
+  height: 100vh;
 }
 
-.app {
-  display: inline;
-  margin: 50px;
+#page-wrap {
+  text-align: center;
+
+  /* Prevent sidebar from showing a scrollbar on page */
+  overflow: auto;
 }
 
-.list {
-  display: flex;
-  justify-content: space-between;
+/* Individual item */
+.bm-item {
+  display: inline-block;
+
+  /* Our sidebar item styling */
   text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
 }
 
-.list a {
-  text-decoration: none;
-  font-family: 'Righteous', cursive;
-  color: black;
-  align-items: center;
-  display: flex;
+/* Change color on hover */
+.bm-item:hover {
+  color: white;
 }
 
+/* The rest copied directly from react-burger-menu docs */
 
-
-.card {
-  width: 400px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  transition: box-shadow .3s ease-in-out;
-  align-items: flex-start;
-  margin: 20px;
-  display: flex;
-  font-size: 30px;
-  text-decoration: none;
-}
-
-.card:hover {
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, .15);
-}
-
-.card.marked {
-  border: 2px solid crimson;
-}
-
-.card-img {
-  display: flex;
-  align-items: center;
-  height: 150px;
-}
-
-.card__content {
-  display: flex;
-  align-items: baseline;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card h3 {
-  float: left
-}
-
-.card img {
-  float: right;
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
   height: 30px;
-  width: 30px
+  left: 36px;
+  top: 36px;
 }
 
-h3 {
-  justify-content: center;
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+:root {
+  --purp: #524763;
+  --darkPurp: #373142;
+  --xtraPurp: #191324;
+  --grey: #d8d8d8;
+  --teal: #82d8d8;
+  --red: #e54b4b;
+  --black: #333;
+  --black-20: #4f4f4f;
+  --black-40: #828282;
+  --black-60: #bdbdbd;
+  --white-60: #e0e0e0;
+  --white-40: #f2f2f2;
+  --white-20: #f5f4f6;
+  --white: #fff;
+}
+
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0ms linear;
+}
+
+#root > div > div {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  box-shadow: 0 62.5px 125px -25px rgb(0, 0, 0),
+    0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
+}
+
+.page-route {
+  height: 60vh;
+  background: grey;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  text-decoration: none;
+  font-family: IBM Plex Mono;
+  background-color: black;
+}
+
+main {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  color: white;
+  align-items: center;
+}
+
+.header__language {
+  color: white;
+}
+
+.header__language {
+  text-transform: uppercase;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  vertical-align: top;
+  align-items: center;
+}
+
+.nav__link {
+  display: inline-block;
+  vertical-align: top;
+
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav {
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .nav a {
-  font-size: 30px;
-  padding: 10px;
-  align-items: center;
-  font-family: 'Righteous', cursive;
+  color: white;
+  border: 1px solid white;
+  padding: 15px;
+  transition: color 0.3s ease-in-out;
   text-decoration: none;
-  color: black;
-  transition: color .3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: orangered;
+  cursor: pointer;
 }
 
 .nav a:hover {
-  color: dimgrey
+  color: orangered;
+  border: 1px solid orangered;
+  padding: 15px;
 }
 
-/* LABEL ======================================= */
-label {
-  color: #999;
-  font-size: 18px;
-  position: absolute;
-  pointer-events: none;
-  left: 10px;
-  top: 15px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
+.container {
+  width: 1200px;
+  height: 500px;
 }
 
-
-
-
-/* form starting stylings ------------------------------- */
-.group {
-  position: relative;
-  margin-bottom: 30px;
+.container__main {
+  display: flex;
+  padding: 30px;
+  list-style-type: none;
 }
 
-input {
-  font-size: 16px;
-  padding: 10px;
-  display: block;
-  width: 250px;
+.left__block {
+  display: flex;
+  align-items: center;
+}
+
+.left__group {
+  padding: 15px;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+  -webkit-transition: all 0.5s ease;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   border: none;
-  border-bottom: 1px solid #ccc;
+  background: #ffd800;
+  border-radius: 30px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  padding: 15px 40px;
+  font-weight: 400;
+  font-size: 13px;
+  cursor: cursor;
 }
 
-input:focus {
-  outline: none;
+button:hover {
+  color: #ffffff;
+  background: #222222;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }
 
-/* BOTTOM BARS ================================= */
-.bar {
-  position: relative;
-  display: block;
-  width: 350px;
+.right__block {
+  display: flex;
+  align-items: center;
 }
 
-.bar:before,
-.bar:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  position: absolute;
-  background: #5264AE;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
+.slider img {
+  width: 500px;
 }
 
-.bar:before {
-  left: 50%;
+.top__text {
+  font-size: 32px;
+  color: grey;
 }
 
-.bar:after {
-  right: 50%;
+.content {
+  font-size: 32px;
+  line-height: 140%;
+  width: 100%;
 }
 
-/* active state */
-input:focus~.bar:before,
-input:focus~.bar:after {
-  width: 50%;
+.content ul {
+  list-style-type: none;
+}
+
+.menu__link {
+  font-size: 32px;
+  line-height: 140%;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu__link li {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  padding-left: 0;
+  padding: 5px;
+}
+
+.menu__link a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu__link a:hover {
+  color: orangered;
+}
+
+.left .Burger .BurgerBox .BurgerInner,
+:before,
+:after {
+  background-color: white;
+}
+
+.left .Burger .BurgerBox .BurgerInner:before {
+  background-color: white;
+}
+
+.left .Burger .BurgerBox .BurgerInner:after {
+  background-color: white;
+}
+
+.nav__footer {
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-decoration: none;
+}
+
+.contact {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.contact a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.mail a:hover {
+  color: orangered;
+}
+
+
+.mail a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.contact p {
+  margin: 20px;
+  border: 20px;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.contact a:hover {
+  color: orangered;
+  font-size: 15px;
+}
+
+.slider .nextButton svg polygon {
+  fill: white !important;
+}
+
+.slider .previousButton svg polygon {
+  fill: white !important;
 }

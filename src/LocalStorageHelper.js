@@ -2,12 +2,12 @@ class LocalStorageHelper {
 
     //получение информации из LocalStorage
     getData() {
-        return JSON.parse(localStorage.getItem('favorite')) || [];
+        return JSON.parse(localStorage.getItem('lang')) || [];
     }
 
     //запись информации в LocalStorage
     setData(data) {
-        localStorage.setItem('favorite', JSON.stringify(data));
+        localStorage.setItem('lang', JSON.stringify(data));
     }
 }
 
