@@ -2,11 +2,10 @@
   "name": "test1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://barketson.github.io/portfolio/",
+  "homepage": "https://barketson.github.io/react-gh-pages/",
   "dependencies": {
     "@types/react-transition-group": "^4.2.2",
     "counterpart": "^0.18.6",
-    "gh-pages": "^2.1.1",
     "i18next": "^17.0.13",
     "lodash": "^4.17.15",
     "react": "^16.9.0",
@@ -47,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "react-localize-redux": "^3.5.3"
   }
 }
