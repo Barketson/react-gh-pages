@@ -26,7 +26,7 @@ export default [{
         about: `Обо мне`,
         skills: `Навыки`,
         project: `Проекты`,
-        contact: `Связь`,
+        contact: `Контакты`,
     },
 
     home: {
@@ -48,6 +48,6 @@ export default [{
     },
 
     app: {
-        contact: `Связь`
+        contact: `Контакты`
     }
 }]
