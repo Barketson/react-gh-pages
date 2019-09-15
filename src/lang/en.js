@@ -21,7 +21,8 @@ Vue.js.`
         text: `If you liked my work, write to me. I will choose the most
 convenient time and place. Do not forget to bring a good mood).`,
         /*CONTACT*/
-        tel: 'MY PHONE'
+        tel: 'MY PHONE',
+        success: 'successfully sent'
     },
 
     Menu: {

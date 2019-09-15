@@ -21,14 +21,12 @@ import LocalStorageHelper from "./LocalStorageHelper";
 import en from "./lang/en";
 import ru from "./lang/ru";
 
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       bol: false,
-      lang: "ru",
+      lang: "ru"
     };
   }
 
@@ -38,21 +36,16 @@ class App extends React.Component {
 
   getLang() {
     const lang = LocalStorageHelper.getData();
-    this.setState({ lang: (!Array.isArray(lang)) ? lang : 'ru' }, console.log(Array.isArray(lang)))
+    this.setState(
+      { lang: !Array.isArray(lang) ? lang : "ru" },
+      console.log(Array.isArray(lang))
+    );
   }
 
   changeLang(el) {
     return el === "ru"
-      ? this.setState(
-        { lang: "en" },
-        LocalStorageHelper.setData("en"),
-        window.location.reload()
-      )
-      : this.setState(
-        { lang: "ru" },
-        LocalStorageHelper.setData("ru"),
-        window.location.reload()
-      );
+      ? this.setState({ lang: "en" }, LocalStorageHelper.setData("en"))
+      : this.setState({ lang: "ru" }, LocalStorageHelper.setData("ru"));
   }
 
   updateData = value => {
@@ -77,21 +70,22 @@ class App extends React.Component {
                       onClick={() => this.handleClickChange()}
                     />
                   </Link>
-                  <div
-                    className="header__language nav__link"
-                    onClick={() => this.changeLang(this.state.lang)}
-                  >
-                    {this.state.lang}
-                  </div>
+                  <Link to={this.props.location}>
+                    <div
+                      className="header__language nav__link"
+                      onClick={() => this.changeLang(this.state.lang)}
+                    >
+                      {this.state.lang}
+                    </div>
+                  </Link>
                 </div>
                 <nav className="nav nav__link">
                   <Link to="/contact">
-
                     {`${
                       this.state.lang === "en"
                         ? en[0].app.contact
                         : ru[0].app.contact
-                      }`}
+                    }`}
                   </Link>
                 </nav>
               </div>
@@ -113,7 +107,7 @@ class App extends React.Component {
                             path="/"
                             render={() => <Menu updateData={this.updateData} />}
                           />
-                          <Route path="/home" component={Home} />
+                          <Route path="/react-gh-pages/" component={Home} />
                           <Route
                             path="/aboutme"
                             render={() => <AboutMe lang={this.state.lang} />}
@@ -130,7 +124,10 @@ class App extends React.Component {
             </main>
             <footer>
               <nav className="nav__footer">
-                <div className="mail"> <a href="https://vk.com/belolaga_me">design by Belolaga</a></div>
+                <div className="mail">
+                  {" "}
+                  <a href="https://vk.com/belolaga_me">design by Belolaga</a>
+                </div>
                 <div className="contact">
                   <p>
                     <a href="https://t.me/Avandor">Telegramm</a>

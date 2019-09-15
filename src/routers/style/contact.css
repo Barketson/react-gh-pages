@@ -80,6 +80,13 @@ input:focus~.bar:after {
     flex-flow: column;
 }
 
+.left__block__success {
+    display: none;
+    align-items: center;
+    flex-flow: column;
+    font-size: 1.7em;
+}
+
 .left__block1 h1 {
     font-size: 1.7em;
 }

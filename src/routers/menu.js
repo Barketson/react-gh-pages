@@ -26,29 +26,29 @@ class Menu extends React.Component {
     return (
       <ul className="menu__link">
         <li>
-          <Link to="home">{`${
+          <Link to="/react-gh-pages/">{`${
             this.state.lang === "en" ? en[0].Menu.home : ru[0].Menu.home
-            }`}</Link>
+          }`}</Link>
         </li>
         <li>
           <Link to="/aboutme">{`${
             this.state.lang === "en" ? en[0].Menu.about : ru[0].Menu.about
-            }`}</Link>
+          }`}</Link>
         </li>
         <li>
           <Link to="/skills">{`${
             this.state.lang === "en" ? en[0].Menu.skills : ru[0].Menu.skills
-            }`}</Link>
+          }`}</Link>
         </li>
         <li>
           <Link to="/project">{`${
             this.state.lang === "en" ? en[0].Menu.project : ru[0].Menu.project
-            }`}</Link>
+          }`}</Link>
         </li>
         <li>
           <Link to="/contact">{`${
             this.state.lang === "en" ? en[0].Menu.contact : ru[0].Menu.contact
-            }`}</Link>
+          }`}</Link>
         </li>
       </ul>
     );

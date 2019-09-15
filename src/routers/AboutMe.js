@@ -9,8 +9,7 @@ class AboutMe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lang: "",
-
+      lang: ""
     };
   }
 
@@ -26,7 +25,7 @@ class AboutMe extends React.Component {
             <div id="top__text" className="top__text">
               {`<${
                 this.state.lang === "en" ? en[0].AboutMe.tag : ru[0].AboutMe.tag
-                }>`}
+              }>`}
             </div>
             <div className="content2">
               <h1>
