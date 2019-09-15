@@ -36,7 +36,7 @@ export default [{
 
     skills: {
         title: `Что я умею ?`,
-        li1: `- Адаптивная верстка`,
+        li1: `- Есть опыт работы с GIT`,
         li2: `- Уменя читать графичские редакторы: Photoshop, Figma`,
         li3: `- HTML и CSS вклячая их сетки`,
         li4: `- Знание Java Script, React.js и Vue.js`,
