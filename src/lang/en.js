@@ -41,7 +41,7 @@ convenient time and place. Do not forget to bring a good mood).`,
 
     skills: {
         title: `What can i do ?`,
-        li1: `- Have experience with git `,
+        li1: `- Have experience with git`,
         li2: `- Reading graphic editors: Photoshop, Figma `,
         li3: `- HTML and CSS including grids`,
         li4: `- Java Script, React.js and Vue.js`,
